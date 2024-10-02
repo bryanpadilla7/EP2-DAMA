@@ -1,46 +1,31 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet, Pressable} from 'react-native';
+import {View, Text, StyleSheet, Pressable, ScrollView} from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
     return (
-        <View style={Styles.container}>
-            <Text style={Styles.title}>Bienvenido a la Clinica Pediatrica</Text>
-            <Pressable style={Styles.button} onPress={() => navigation.navigate("Paciente")}>
-                <Text style={Styles.buttonText}>Perfil</Text>
+        <ScrollView contentContainerStyle={Styles.container}>
+            <Text style={Styles.title}>Selecciona una categoría de conversión</Text>
+            <Pressable style={Styles.button} onPress={() => navigation.navigate("Longitud")}>
+                <Text style={Styles.buttonText}>Coversión de longitud</Text>
             </Pressable>
             <View style={Styles.spacer}></View>
-            <Pressable style={Styles.button} onPress={() => navigation.navigate("Configuracion")}>
-                <Text style={Styles.buttonText}>Configuracíon</Text>
+            <Pressable style={Styles.button} onPress={() => navigation.navigate("Peso")}>
+                <Text style={Styles.buttonText}>Conversión de peso</Text>
             </Pressable>
             <View style={Styles.spacer}></View>
-            <Pressable style={Styles.button} onPress={() => navigation.navigate("Citas")}>
-                <Text style={Styles.buttonText}>Citas</Text>
+            <Pressable style={Styles.button} onPress={() => navigation.navigate("Temperatura")}>
+                <Text style={Styles.buttonText}>Conversión de temperatura</Text>
             </Pressable>
-            <View style={Styles.spacer}></View>
-            <Pressable style={Styles.button} onPress={() => navigation.navigate("Historial")}>
-                <Text style={Styles.buttonText}>Historial Médico</Text>
-            </Pressable>
-            <View style={Styles.spacer}></View>
-            <Pressable style={Styles.button} onPress={() => navigation.navigate("Interface")}>
-                <Text style={Styles.buttonText}>Gestion Usuarios</Text>
-            </Pressable>
-            <View style={Styles.spacer}></View>
-            <Pressable style={Styles.button} onPress={() => navigation.navigate("Doctors")}>
-                <Text style={Styles.buttonText}>Gestion Doctores</Text>
-            </Pressable>
-            <View style={Styles.spacer}></View>
-            <Pressable style={Styles.button} onPress={() => navigation.navigate("Login")}>
-                <Text style={Styles.buttonText}>Cerrar Sesión</Text>
-            </Pressable>
-        </View>
+        </ScrollView>
     );
 }
 
 const Styles = StyleSheet.create({
     container:{
-        flex: 1,
+        flexGrow: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        paddingVertical: 20,
     },
     title:{
         fontSize: 40,
@@ -57,7 +42,7 @@ const Styles = StyleSheet.create({
         paddingHorizontal: 32,
         borderRadius: 10,
         elevation: 3,
-        backgroundColor: '#A60F1B',
+        backgroundColor: '#042940',
         width: '70%',
     },
     buttonText: {
